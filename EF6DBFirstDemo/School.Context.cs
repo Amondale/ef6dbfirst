@@ -15,10 +15,10 @@ namespace EF6DBFirstDemo
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class SchoolDBEntities : DbContext
+    public partial class SchoolDBEntities1 : DbContext
     {
-        public SchoolDBEntities()
-            : base("name=SchoolDBEntities")
+        public SchoolDBEntities1()
+            : base("name=SchoolDBEntities1")
         {
         }
     
@@ -34,22 +34,13 @@ namespace EF6DBFirstDemo
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<View_StudentCourse> View_StudentCourse { get; set; }
     
-        public virtual ObjectResult<Course> GetCoursesByStudentId(Nullable<int> studentId)
+        public virtual ObjectResult<GetCoursesByStudentId_Result> GetCoursesByStudentId(Nullable<int> studentId)
         {
             var studentIdParameter = studentId.HasValue ?
                 new ObjectParameter("StudentId", studentId) :
                 new ObjectParameter("StudentId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Course>("GetCoursesByStudentId", studentIdParameter);
-        }
-    
-        public virtual ObjectResult<Course> GetCoursesByStudentId(Nullable<int> studentId, MergeOption mergeOption)
-        {
-            var studentIdParameter = studentId.HasValue ?
-                new ObjectParameter("StudentId", studentId) :
-                new ObjectParameter("StudentId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Course>("GetCoursesByStudentId", mergeOption, studentIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCoursesByStudentId_Result>("GetCoursesByStudentId", studentIdParameter);
         }
     
         public virtual int sp_DeleteStudent(Nullable<int> studentId)

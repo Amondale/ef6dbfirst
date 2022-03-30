@@ -17,17 +17,20 @@ namespace EF6DBFirstDemo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Student()
         {
-            this.Courses = new HashSet<Course>();
+            this.Courses = new HashSet<Cours>();
         }
     
         public int StudentID { get; set; }
         public string StudentName { get; set; }
-        public Nullable<int> StandardId { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public decimal Height { get; set; }
+        public float Weight { get; set; }
         public byte[] RowVersion { get; set; }
+        public Nullable<int> GradeId { get; set; }
     
-        public virtual Standard Standard { get; set; }
+        public virtual Grade Grade { get; set; }
         public virtual StudentAddress StudentAddress { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Cours> Courses { get; set; }
     }
 }

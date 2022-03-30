@@ -337,7 +337,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
           <End Role="Course" Type="Self.Course" Multiplicity="*" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="SchoolDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SchoolDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Standards" EntityType="Self.Standard" />
           <EntitySet Name="Students" EntityType="Self.Student" />
@@ -364,7 +364,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
             <End Role="Course" EntitySet="Courses" />
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
-          <FunctionImport Name="GetCoursesByStudentId" EntitySet="Courses" ReturnType="Collection(SchoolDBModel.Course)">
+          <FunctionImport Name="GetCoursesByStudentId" ReturnType="Collection(SchoolDBModel.GetCoursesByStudentId_Result)">
             <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteStudent">
@@ -390,7 +390,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SchoolDBModelStoreContainer" CdmEntityContainer="SchoolDBEntities">
+        <EntityContainerMapping StorageEntityContainer="SchoolDBModelStoreContainer" CdmEntityContainer="SchoolDBEntities1">
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="SchoolDBModel.Course">
               <MappingFragment StoreEntitySet="Course">
@@ -460,6 +460,13 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
             </EndProperty>
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="GetCoursesByStudentId" FunctionName="SchoolDBModel.Store.GetCoursesByStudentId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SchoolDBModel.GetCoursesByStudentId_Result">
+                <ScalarProperty Name="courseid" ColumnName="courseid" />
+                <ScalarProperty Name="coursename" ColumnName="coursename" />
+                <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_DeleteStudent" FunctionName="SchoolDBModel.Store.sp_DeleteStudent" />
           <FunctionImportMapping FunctionImportName="sp_InsertStudentInfo" FunctionName="SchoolDBModel.Store.sp_InsertStudentInfo" />
