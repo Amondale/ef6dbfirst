@@ -119,6 +119,8 @@
     <None Include="School.edmx.diagram">
       <DependentUpon>School.edmx</DependentUpon>
     </None>
+    <None Include="schooldb.bacpac" />
+    <None Include="SchoolDB.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
