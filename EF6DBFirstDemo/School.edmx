@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseId" />
@@ -207,8 +207,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
             <End Role="Teacher" EntitySet="Teacher" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SchoolDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -365,10 +364,10 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
           <FunctionImport Name="GetCoursesByStudentId" ReturnType="Collection(SchoolDBModel.GetCoursesByStudentId_Result)">
-            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+          <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteStudent">
-            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+          <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_InsertStudentInfo" ReturnType="Collection(Decimal)">
             <Parameter Name="StandardId" Mode="In" Type="Int32" />
