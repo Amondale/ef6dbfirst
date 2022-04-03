@@ -15,10 +15,10 @@ namespace EF6DBFirstDemo
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class SchoolDBEntities1 : DbContext
+    public partial class SchoolDBEntities : DbContext
     {
-        public SchoolDBEntities1()
-            : base("name=SchoolDBEntities1")
+        public SchoolDBEntities()
+            : base("name=SchoolDBEntities")
         {
         }
     

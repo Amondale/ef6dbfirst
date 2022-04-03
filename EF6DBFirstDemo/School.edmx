@@ -337,7 +337,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
           <End Role="Course" Type="Self.Course" Multiplicity="*" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="SchoolDBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SchoolDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Standards" EntityType="Self.Standard" />
           <EntitySet Name="Students" EntityType="Self.Student" />
@@ -390,7 +390,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SchoolDBModelStoreContainer" CdmEntityContainer="SchoolDBEntities1">
+        <EntityContainerMapping StorageEntityContainer="SchoolDBModelStoreContainer" CdmEntityContainer="SchoolDBEntities">
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="SchoolDBModel.Course">
               <MappingFragment StoreEntitySet="Course">
