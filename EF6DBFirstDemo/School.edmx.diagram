@@ -7,10 +7,10 @@
       <Diagram DiagramId="86611939a4384fe79dd019cbb2beb300" Name="Diagram1">
         <EntityTypeShape EntityType="SchoolDBModel.Course" Width="1.5" PointX="4.875" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.Standard" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.Student" Width="1.5" PointX="3.625" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Student" Width="1.5" PointX="3.625" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.StudentAddress" Width="1.5" PointX="6.375" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.Teacher" Width="1.5" PointX="2.25" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.View_StudentCourse" Width="1.5" PointX="3.625" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.View_StudentCourse" Width="2.25" PointX="2.375" PointY="5.875" IsExpanded="true" />
         <AssociationConnector Association="SchoolDBModel.FK_Course_Teacher" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_Student_Standard" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_Teacher_Standard" ManuallyRouted="false" />
