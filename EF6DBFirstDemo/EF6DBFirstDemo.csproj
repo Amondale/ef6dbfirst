@@ -71,10 +71,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Course.cs">
-      <DependentUpon>School.tt</DependentUpon>
+      <DependentUpon>CU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CU.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CU.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CU.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CU.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="C__EFMigrationsHistory.cs">
+      <DependentUpon>CU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>CU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enrollment.cs">
+      <DependentUpon>CU.tt</DependentUpon>
     </Compile>
     <Compile Include="GetCoursesByStudentId_Result.cs">
       <DependentUpon>School.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor.cs">
+      <DependentUpon>CU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeAssignment.cs">
+      <DependentUpon>CU.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,7 +127,7 @@
       <DependentUpon>School.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
-      <DependentUpon>School.tt</DependentUpon>
+      <DependentUpon>CU.tt</DependentUpon>
     </Compile>
     <Compile Include="StudentAddress.cs">
       <DependentUpon>School.tt</DependentUpon>
@@ -111,6 +141,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="CU.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CU.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CU.edmx.diagram">
+      <DependentUpon>CU.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="School.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -126,6 +163,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CU.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CU.edmx</DependentUpon>
+      <LastGenOutput>CU.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CU.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CU.edmx</DependentUpon>
+      <LastGenOutput>CU.cs</LastGenOutput>
+    </Content>
     <Content Include="ReadMe.txt" />
     <Content Include="School.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

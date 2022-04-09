@@ -12,20 +12,24 @@ namespace EF6DBFirstDemo
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class Instructor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()
+        public Instructor()
         {
-            this.Enrollments = new HashSet<Enrollment>();
+            this.Departments = new HashSet<Department>();
+            this.Courses = new HashSet<Course>();
         }
     
         public int ID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public System.DateTime EnrollmentDate { get; set; }
+        public System.DateTime HireDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Department> Departments { get; set; }
+        public virtual OfficeAssignment OfficeAssignment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }
